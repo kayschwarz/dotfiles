@@ -6,12 +6,13 @@ filetype off 		       " required for vundle (see gmarik/vundle)
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
+ 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
 " Fancyness
 Bundle 'bling/vim-airline'
+Bundle 'altercation/vim-colors-solarized'
  
 syntax on                      " enable syntax highlighting
 set number                     " show line numbers
@@ -23,7 +24,8 @@ set hlsearch                   " Search highlighting
 set incsearch                  " Highlight as you type
 set ignorecase
 set smartcase
-
+set wildmenu                   " complete all the commands!
+set wildmode=list:longest,full
 " Write and quit
 command! Wsudo :w !sudo tee %
 command! WQ wq
@@ -42,6 +44,7 @@ command! FormatXml %!xmllint --format -
 " Press Space to turn off highlighting and clear any message already
 " displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 
 " Hightlight current line in gui
 " set cursorline
@@ -77,3 +80,10 @@ else
     endif
   endfunction
 endif
+
+set background=dark
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
+colorscheme solarized
+
