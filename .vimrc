@@ -6,7 +6,7 @@ filetype off 		       " required for vundle (see gmarik/vundle)
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
- 
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
@@ -14,6 +14,12 @@ Plugin 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
  
+" FileManagement
+Bundle 'scrooloose/nerdtree'
+
+" Formatting
+Bundle 'junegunn/vim-easy-align'
+
 syntax on                      " enable syntax highlighting
 set number                     " show line numbers
 set visualbell                 " no beeps please!
@@ -26,6 +32,7 @@ set ignorecase
 set smartcase
 set wildmenu                   " complete all the commands!
 set wildmode=list:longest,full
+
 " Write and quit
 command! Wsudo :w !sudo tee %
 command! WQ wq
